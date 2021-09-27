@@ -1,0 +1,104 @@
+* {
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0px;
+}
+body{
+    background: #0f2027;
+}
+.form-group{
+    display: grid;
+    justify-items: center;
+    
+}
+.form-group > h1{
+    margin: 10px;
+    padding-bottom: 20px;
+    color: #a8d0da;
+}
+.form-group > input{
+        margin: 10px;
+}
+.bn632-hover {
+    width: 160px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+  
+.bn632-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+.bn632-hover:focus {
+outline: none;
+}
+.bn632-hover.bn25 {
+    background-image: linear-gradient(
+        to right,
+        #29323c,
+        #485563,
+        #2b5876,
+        #4e4376
+    );
+    box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+}
+    
+.form__label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s;
+    transform: translateY(0rem);
+    color: white;
+}
+.form__label2{
+    color: #a8d0da;
+}
+.form__input {
+    
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    font-size: 1.2rem;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    border-radius: 0.2rem;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    width: 22%;
+    display: block;
+    border-bottom: 0.3rem solid transparent;
+    transition: all 0.3s;
+}
+.form__input:placeholder-shown + .form__label {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateY(-4rem);
+    transform: translateY(-4rem);
+}
+.img-group{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    height:600px;
+}
+.img-group > img{
+    width: 600px;
+    border-radius: 5px;
+}
+

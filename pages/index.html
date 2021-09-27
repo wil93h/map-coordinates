@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/styles.css"></link>
+    <title>Map App</title>
+  </head>
+  <body>
+    <form action="/action_page.php" id="input-form">
+      <div class="form-group">
+      <h1>Map App</h1>
+      <label class="form__label2" for="2">LON,LAT format split's by comma</label>
+      <input class="form__input map-input" type="text" id="coordinates" value="30,30" name="coordinates" placeholder="Coordinates" required=""/>
+      <label for="coordinates" class="form__label">Coordinates</label>
+      <button class="bn632-hover bn25">Search</button>
+      </div><br /><br />
+    </form>
+    <div class="img-group">
+      <img src="map.png" style='display:none' alt="Map" id='map-img'/>
+      <img src="loading.jpeg" alt="Map" style='display:none' id='loading-img'/>
+    </div>
+  </body>
+</html>
+
+<script>
+  const form = document.getElementById("input-form");
+
+  form.addEventListener(
+          "submit", (e) => {
+            e.preventDefault();
+            const loadingImg = document.getElementById("loading-img");
+            const mapImg = document.getElementById("map-img");
+            const coordinates = document.getElementById("coordinates").value;
+            const arrayCoordinates = coordinates.split(",");
+            mapImg.style.display = 'none';
+            loadingImg.style.display = 'flex';
+            fetch(
+                    `http://localhost:3000/${arrayCoordinates[0]}&${arrayCoordinates[1]}`
+            )
+                    .then((response) => response.json())
+                    .then((data) => {
+                      mapImg.src = "http://localhost:3000/map.png?" + new Date().getTime();
+                      mapImg.style.display = 'flex';
+                      loadingImg.style.display = 'none';
+                    });
+          }
+  );
+</script>
